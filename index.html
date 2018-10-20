@@ -1,0 +1,266 @@
+<style>
+<style type="text/css">
+
+  #cm_cr_dpwidget .a-size-micro {
+    font-size: 9px;
+  } 
+
+  #cm_cr_dpwidget .c7yTopDownDashedStrike {
+    border-top: 1px dashed #A9A9A9;
+    border-bottom: 1px dashed #A9A9A9;
+  }
+
+  #cm_cr_dpwidget .c7yBadgeAUI {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px;
+    white-space: nowrap;
+  }
+
+</style>
+
+
+
+<style type="text/css">.nav-sprite-v1 .nav-sprite, .nav-sprite-v1 .nav-icon {
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global_bluebeacon-V3-1x_optimized.png);
+  background-position: 0 1000px;
+  background-repeat: repeat-x;
+}
+.nav-spinner {
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/javascripts/lib/popover/images/snake._CB192571611_.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.nav-timeline-icon, .nav-access-image, .nav-timeline-prime-icon {
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/timeline_sprite_1x._CB276239408_.png);
+  background-repeat: no-repeat;
+}
+
+
+  
+    .tagEdit {
+      padding-bottom:4px;
+      padding-top:4px;
+    }
+
+    .edit-tag {
+      width: 155px;
+      margin-left: 10px;
+    }
+
+    .list-tags {
+      white-space: nowrap;
+      padding: 1px 0px 0px 0px;
+    }
+
+   #suggest-table {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      background-color: #fff;
+      border: 1px solid #9ac;
+    }
+
+    #suggest-table tr td{
+      color: #333;
+      font: 11px Verdana, sans-serif;
+      padding: 2px;
+    }
+
+    #suggest-table tr.hovered {
+      color: #efedd4;
+      background-color: #9ac;
+    }
+
+  
+  .see-popular {
+    padding: 1.3em 0 0 0;
+  }
+
+  .tag-cols {
+    border-collapse: collapse;
+  }
+
+  .tag-cols td {
+    vertical-align: top;
+    width: 250px;
+    padding-right: 30px;
+  }
+
+  .tag-cols .tag-row {
+    padding: 0 0 7px 0px;
+  }
+
+  .tag-cols .see-all {
+    white-space: nowrap;
+    padding-top: 5px;
+  }
+
+  .tags-piles-feedback {
+    display: none;
+    color: #000;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 0px 0 0 0;
+   }
+
+  .tag-cols i {
+    display: none;
+    cursor: pointer;
+    cursor: hand;
+    float: left;
+    font-style: normal;
+    font-size: 0px;
+    vertical-align: bottom;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    margin-right: 3px;
+  }
+
+  .tag-cols .snake {
+    display: block;
+    background: url('https://images-na.ssl-images-amazon.com/images/G/01/x-locale/communities/tags/graysnake._CB192250049_.gif');
+  }
+
+  #tagContentHolder .tip {
+    display: none;
+    color: #999;
+    font-size: 10px;
+    padding-top: 0.25em;
+  }
+
+  #tagContentHolder .tip a {
+    color: #999 !important;
+    text-decoration: none !important;
+    border-bottom: solid 1px #CCC;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  #tgEnableVoting {
+    display: none;
+  }
+
+  #tagContentHolder .count {
+    color: #666;
+    font-size: 10px;
+    margin-left: 3px;
+    white-space: nowrap;
+  }
+
+  .count.tgVoting {
+    cursor: pointer;
+  }
+
+  .tgVoting .tgCounter {
+    margin-right: 3px;
+    border-bottom: 1px dashed #003399;
+    color: #003399;
+  }
+
+
+.c2c-inline-sprite {
+    display: -moz-inline-box;
+    display: inline-block;
+    margin: 0;padding: 0; 
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/electronics/click2call/click2call-sprite._CB156431432_.png);
+    background-repeat: no-repeat;
+}
+.c2c-inline-sprite span {
+    position:absolute;
+    top:-9999px;
+}
+
+.dp-call-me-button {
+    width:52px;
+    height:22px;
+    background-position:0px -57px; 
+}
+
+#dp-c2c-phone-icon {
+  background-image:url(https://images-na.ssl-images-amazon.com/images/G/01/electronics/click2call/sprite-click2call._CB134653340_.png);
+  background-repeat:no-repeat;
+  background-position: 0px 0px;
+  width:36px;
+  height:35px;
+  float:left;
+  margin-right:0.5em;
+}   
+#detailpage-click2call-table {
+  padding: 5px 0;
+}   
+
+</style>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div id="calculparking" style="background: #ededff; box-shadow: 07px 07px; height: 220px; width: 350px; ">
+<br />
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PARKING TIME CALCULATION</h3>
+<br />
+&nbsp;&nbsp;<label>Arrival  date  &amp;  Time              </label>
+&nbsp; &nbsp; &nbsp; &nbsp;<input id="old" name="old" type="date" />
+<br /><br />
+&nbsp;&nbsp;<label>Departure date &amp; Time </label>
+  &nbsp;<input id="new" name="new" onblur="document.getElementById('total').value = (new Date(this.value) - new Date(old.value))/(1000*60*60*24)" type="date" />
+<br /><br />
+&nbsp;&nbsp;<label>Difference in days :</label>
+ 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="total" name="total" onchange="changeDate()" type="text" style="width:50px" /> 
+
+<br>
+</div>
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAx5Jmgk3fC9XI8jwPa2RnSed_GX-DH0_g",
+    authDomain: "gestion-qcm.firebaseapp.com",
+    databaseURL: "https://gestion-qcm.firebaseio.com",
+    projectId: "gestion-qcm",
+    storageBucket: "",
+    messagingSenderId: "448248783751"
+  };
+  firebase.initializeApp(config);
+
+
+///////////////
+
+var db = firebase.database();
+ db.ref('touchee').set({
+    name: "salim",
+	Fname: "Rodi",
+    email:"fff-jamal@hotmail.com"
+    
+  });
+
+
+ 
+
+var v=prompt("dfdfdvfv");
+
+
+
+
+var date_diff_indays = function(date1, date2) {
+dt1 = new Date(date1);
+dt2 = new Date(date2);
+return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+}
+console.log(date_diff_indays('04/02/2014', '11/04/2014'));
+console.log(date_diff_indays('12/02/2014', '11/04/2014'));
+
+</script>
+
+
