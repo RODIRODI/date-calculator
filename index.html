@@ -1,266 +1,2459 @@
-<style>
-<style type="text/css">   
+<div dir="ltr" style="text-align: left;" trbidi="on">
+&lt;
 
-  #cm_cr_dpwidget .a-size-micro {
-    font-size: 9px;
-  } 
-
-  #cm_cr_dpwidget .c7yTopDownDashedStrike {
-    border-top: 1px dashed #A9A9A9;
-    border-bottom: 1px dashed #A9A9A9;
-  }
-
-  #cm_cr_dpwidget .c7yBadgeAUI {
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 2px;
-    white-space: nowrap;
-  }
-
-</style>
-
-
-
-<style type="text/css">.nav-sprite-v1 .nav-sprite, .nav-sprite-v1 .nav-icon {
-  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global_bluebeacon-V3-1x_optimized.png);
-  background-position: 0 1000px;
-  background-repeat: repeat-x;
-}
-.nav-spinner {
-  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/javascripts/lib/popover/images/snake._CB192571611_.gif);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-.nav-timeline-icon, .nav-access-image, .nav-timeline-prime-icon {
-  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/timeline_sprite_1x._CB276239408_.png);
-  background-repeat: no-repeat;
-}
-
-
-  
-    .tagEdit {
-      padding-bottom:4px;
-      padding-top:4px;
-    }
-
-    .edit-tag {
-      width: 155px;
-      margin-left: 10px;
-    }
-
-    .list-tags {
-      white-space: nowrap;
-      padding: 1px 0px 0px 0px;
-    }
-
-   #suggest-table {
-      display: none;
-      position: absolute;
-      z-index: 2;
-      background-color: #fff;
-      border: 1px solid #9ac;
-    }
-
-    #suggest-table tr td{
-      color: #333;
-      font: 11px Verdana, sans-serif;
-      padding: 2px;
-    }
-
-    #suggest-table tr.hovered {
-      color: #efedd4;
-      background-color: #9ac;
-    }
-
-  
-  .see-popular {
-    padding: 1.3em 0 0 0;
-  }
-
-  .tag-cols {
-    border-collapse: collapse;
-  }
-
-  .tag-cols td {
-    vertical-align: top;
-    width: 250px;
-    padding-right: 30px;
-  }
-
-  .tag-cols .tag-row {
-    padding: 0 0 7px 0px;
-  }
-
-  .tag-cols .see-all {
-    white-space: nowrap;
-    padding-top: 5px;
-  }
-
-  .tags-piles-feedback {
-    display: none;
-    color: #000;
-    font-size: 0.9em;
-    font-weight: bold;
-    margin: 0px 0 0 0;
-   }
-
-  .tag-cols i {
-    display: none;
-    cursor: pointer;
-    cursor: hand;
-    float: left;
-    font-style: normal;
-    font-size: 0px;
-    vertical-align: bottom;
-    width: 16px;
-    height: 16px;
-    margin-top: 1px;
-    margin-right: 3px;
-  }
-
-  .tag-cols .snake {
-    display: block;
-    background: url('https://images-na.ssl-images-amazon.com/images/G/01/x-locale/communities/tags/graysnake._CB192250049_.gif');
-  }
-
-  #tagContentHolder .tip {
-    display: none;
-    color: #999;
-    font-size: 10px;
-    padding-top: 0.25em;
-  }
-
-  #tagContentHolder .tip a {
-    color: #999 !important;
-    text-decoration: none !important;
-    border-bottom: solid 1px #CCC;
-  }
-
-  .nowrap {
-    white-space: nowrap;
-  }
-
-  #tgEnableVoting {
-    display: none;
-  }
-
-  #tagContentHolder .count {
-    color: #666;
-    font-size: 10px;
-    margin-left: 3px;
-    white-space: nowrap;
-  }
-
-  .count.tgVoting {
-    cursor: pointer;
-  }
-
-  .tgVoting .tgCounter {
-    margin-right: 3px;
-    border-bottom: 1px dashed #003399;
-    color: #003399;
-  }
-
-
-.c2c-inline-sprite {
-    display: -moz-inline-box;
-    display: inline-block;
-    margin: 0;padding: 0; 
-    position: relative;
-    overflow: hidden;
-    vertical-align: middle;
-    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/electronics/click2call/click2call-sprite._CB156431432_.png);
-    background-repeat: no-repeat;
-}
-.c2c-inline-sprite span {
-    position:absolute;
-    top:-9999px;
-}
-
-.dp-call-me-button {
-    width:52px;
-    height:22px;
-    background-position:0px -57px; 
-}
-
-#dp-c2c-phone-icon {
-  background-image:url(https://images-na.ssl-images-amazon.com/images/G/01/electronics/click2call/sprite-click2call._CB134653340_.png);
-  background-repeat:no-repeat;
-  background-position: 0px 0px;
-  width:36px;
-  height:35px;
-  float:left;
-  margin-right:0.5em;
-}   
-#detailpage-click2call-table {
-  padding: 5px 0;
-}   
-
-</style>
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div id="calculparking" style="background: #ededff; box-shadow: 07px 07px; height: 220px; width: 350px; ">
-<br />
-<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PARKING TIME CALCULATION</h3>
-<br />
-&nbsp;&nbsp;<label>Arrival  date  &amp;  Time              </label>
-&nbsp; &nbsp; &nbsp; &nbsp;<input id="old" name="old" type="date" />
-<br /><br />
-&nbsp;&nbsp;<label>Departure date &amp; Time </label>
-  &nbsp;<input id="new" name="new" onblur="document.getElementById('total').value = (new Date(this.value) - new Date(old.value))/(1000*60*60*24)" type="date" />
-<br /><br />
-&nbsp;&nbsp;<label>Difference in days :</label>
- 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="total" name="total" onchange="changeDate()" type="text" style="width:50px" /> 
-
-<br>
-</div>
-
-
-
-
-
-<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+<!-- Global site tag (gtag.js) - Google AdWords: 845159811 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-845159811"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAx5Jmgk3fC9XI8jwPa2RnSed_GX-DH0_g",
-    authDomain: "gestion-qcm.firebaseapp.com",
-    databaseURL: "https://gestion-qcm.firebaseio.com",
-    projectId: "gestion-qcm",
-    storageBucket: "",
-    messagingSenderId: "448248783751"
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-845159811');
+</script>
+
+
+<!-- Event snippet for sell_button_click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_gift_card_sale_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
   };
-  firebase.initializeApp(config);
-
-
-///////////////
-
-var db = firebase.database();
- db.ref('touchee').set({
-    name: "salim",
-	Fname: "Abbas",
-    email:"eee-jamal@hotmail.com"
-    
+  gtag('event', 'conversion', {
+      'send_to': 'AW-845159811/79dyCMu0snwQg7uAkwM',
+      'transaction_id': '',
+      'event_callback': callback
   });
-
-
-
-
-var v=prompt("dfdfdvfv");
-
-
-
-
-var date_diff_indays = function(date1, date2) {
-dt1 = new Date(date1);
-dt2 = new Date(date2);
-return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+  return false;
 }
-console.log(date_diff_indays('04/02/2014', '11/04/2014'));
-console.log(date_diff_indays('12/02/2014', '11/04/2014'));
+</script>
+
+
+
+
+<!-- Event snippet for sellmegiftcard_shopping_order_placed conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_shopping_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-845159811/UDrRCOmEu4MBEIO7gJMD',
+      'transaction_id': '',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '408307899570561'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" style="display: none"
+  src="https://www.facebook.com/tr?id=408307899570561&ev=PageView&noscript=1" />
+</noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<!-- google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89452531-1', 'auto');
+  ga('send', 'pageview');
 
 </script>
 
-<button onclick="window.location.href='/localhost'">Get invoice</button>
+
+<body class="index" id="page-top">
+
+ <!-- google analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89452531-1', 'auto');
+ga('send', 'pageview');
+
+</script><!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom" id="mainNav">
+ <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header page-scroll">
+   <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+    <span class="sr-only">Toggle navigation</span> Menu <i class="glyphicon glyphicon-menu-hamburger"></i>
+   </button>
+   <a class="navbar-left" href="https://www.blogger.com/blogger.g?blogID=9069092063355215699#page-top"><img alt="Sell Me Gift Card" class="img-responsive logo" src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/AfcrWYxo91DXuhxjBnwkNqfrPor2ifumqDCMgIAcjo3GYDEJ4aHNhEjpTtvPPxrMgXICKOQWTye.png" /></a>
+  </div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   <ul class="nav navbar-nav navbar-right">
+<li class="hidden"><a href="https://www.blogger.com/blogger.g?blogID=9069092063355215699#page-top"></a></li>
+<li class=""><a href="https://www.sellmegiftcard.com/#learnMoreSection">Learn More</a></li>
+<li class=""><a href="https://www.sellmegiftcard.com/#sellYourCardSection">Sell Your
+      Card</a></li>
+<li class=""><a href="https://www.sellmegiftcard.com/#contactUsSection">Contact Us</a></li>
+<li class=""><a href="https://www.sellmegiftcard.com/amazon-shopping/select-item.php?">Amazon Shopping</a></li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+ </div>
+<!-- /.container-fluid -->
+ <div class="container-fluid">
+  <div class="row NavBottomBorder">
+   <div class="col-lg-1 col-md-1 col-xs-2 col-sm-1" style="background-color: black; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-xs-2 col-sm-1" style="background-color: #ed1c24; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-xs-2 col-sm-1" style="background-color: #22b14c; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-xs-2 col-sm-1" style="background-color: black; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2" style="background-color: #ed1c24; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2" style="background-color: #22b14c; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs" style="background-color: black; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs" style="background-color: #ed1c24; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs" style="background-color: #22b14c; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs" style="background-color: black; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs" style="background-color: #ed1c24; height: 3px;">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs" style="background-color: #22b14c; height: 3px;">
+</div>
+</div>
+</div>
+</nav> 
+ 
+ <!-- give me card header -->
+ <div class="header-section">
+
+  <div class="container">
+   <br /> <br />
+   <div class="row">
+
+    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+
+     <br />
+     <h4>
+You're only one step away from massive savings on Amazon:</h4>
+<h5>
+&nbsp; &nbsp; - Search the item on Amazon.</h5>
+<h5>
+&nbsp; &nbsp; - Copy and paste amazon URL into SellMeGiftCard
+      Search Bar.</h5>
+<br /> <br />
+
+
+    </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+
+     <img alt="" class="img-centered img-responsive" src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/0tvgPy6VPi7DVqMut6f5EjghMEdlacFPFEjAWGAPz7vGCdq0zO0p0bdjy8q.gif" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-1 col-md-1 col-xs-1 col-sm-1">
+</div>
+<div class="col-lg-10 col-md-10 col-xs-10 col-sm-10 text-center">
+     <br /> <br /> <br /> <br />
+
+     <h5>
+Paste Amazon.com Item URL Here:</h5>
+<div class="row">
+      <div class="col-lg-1 col-md-1 col-xs-0 col-sm-0">
+</div>
+<div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
+       <input class="form-control input" id="searchAmazonItemInput" placeholder="" type="email" />
+      </div>
+<div class="hidden-md hidden-lg col-xs-12 col-sm-12">
+       <br />
+      </div>
+<div class="col-lg-2 col-md-2 col-xs-12 col-sm-12">
+       <button class="btn btn-info btn-block " id="searchAmazonItemButton" type="button">Search</button>
+      </div>
+</div>
+</div>
+</div>
+<br /> <br />
+
+   <div class="row">
+    <div class="col-lg-4 col-md-4 col-xs-1 col-sm-1">
+</div>
+<div class="col-lg-4 col-md-4 col-xs-10 col-sm-10" id="AmazonItemContainer">
+</div>
+<div class="col-lg-4 col-md-4 col-xs-1 col-sm-1">
+</div>
+</div>
+<div class="row text-center">
+    <div class="form-main-message-error" id="server_error_message" style="display: none;">
+</div>
+</div>
+<br /> <br /> <br /> <br />
+
+  </div>
+</div>
+<!-- -->
+ <section class="success" id="">
+  <div class="container">
+   <div class="row">
+    <div class="hidden-md hidden-lg col-sm-offset-2 col-xs-offset-2 col-xs-8 col-sm-8">
+     <img alt="amazon price discount" class="img-responsive" src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/BdjL7SkIEbYn06pm3Djzpvc5dsuydSGK9w0M8Q2KF0QyXiOU84f9S78.png" />
+
+    </div>
+<!-- First Col - Text  -->
+    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+     <br />
+     <h3>
+Shopping on Amazon US with discounted gift cards was never so
+      easy:</h3>
+<h3>
+&amp;nbsp &amp;nbsp 1. Search for the item you want on Amazon.com ,
+      copy and paste the Amazon URL into SellMeGiftCard search bar .</h3>
+<h3>
+&amp;nbsp &amp;nbsp 2. Fill your shipping details and Pay with Paypal ,
+      Safe &amp; Secure Payment .</h3>
+<h3>
+&amp;nbsp &amp;nbsp 3. SellMeGiftCard order the item on Amazon and
+      update you with the tracking details via email .</h3>
+<br />
+    </div>
+<!-- 
+         - Second Col 
+         - visible just  in "lg" & "md" screen - Picture
+         - this block is hidden in in xs & sm , @PictureSection1_XS_SM block is displayed instead
+     -->
+    <div class="hidden-sm hidden-xs col-lg-1 col-md-1">
+</div>
+<div class="hidden-sm hidden-xs col-lg-4 col-md-4">
+     <img alt="amazon price discount" class="img-responsive" src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/BdjL7SkIEbYn06pm3Djzpvc5dsuydSGK9w0M8Q2KF0QyXiOU84f9S78.png" />
+
+    </div>
+</div>
+<div class="row">
+
+
+    <div class="col-lg-3 col-md-3 col-xs-1 col-sm-1">
+</div>
+<div class="col-lg-6 col-md-6 col-xs-10 col-sm-10">
+     <br /> <br />
+
+     <div class="embed-responsive embed-responsive-16by9">
+
+      <iframe allowfullscreen="" class="embed-responsive-item" frameborder="0" mozallowfullscreen="" src="https://player.vimeo.com/video/283519126?color=ffffff" webkitallowfullscreen=""></iframe>
+     </div>
+<br />
+
+    </div>
+<div class="col-lg-3 col-md-3 col-xs-1 col-sm-1">
+</div>
+</div>
+</div>
+</section>
+
+ <!-- Lear More -->
+ <section id="">
+  <div class="container">
+
+   <div class="row">
+    <div class="col-lg-12 text-center">
+     <h2>
+The SellMeGiftCard Benefits for Buyers</h2>
+<hr class="star-primary" />
+    </div>
+</div>
+<br /> <br /> <br />
+
+
+   <div class="row">
+
+    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+
+     <br />
+
+     <div class="row">
+      <div class="col-sm-offset-2 col-xs-offset-2 col-xs-8 col-sm-8">
+
+       <img alt="money back guarantee for amazon orders" class="img-responsive img-centered" src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/0s41O4oiDYerNg1bZM3L6G406iHAO9QhUNAWCZQaOX7.png" />
+      </div>
+</div>
+<br />
+     <h3>
+Money Back Guarantee</h3>
+<h4>
+If the item lost in transit we issue a full refund .</h4>
+</div>
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+     <br />
+     <div class="row">
+
+      <div class="col-sm-offset-2 col-xs-offset-2 col-xs-8 col-sm-8">
+       <img alt="best amazon price" class="img-centered img-responsive" src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/HyWfFMQWyWVXxrMF1tiHR1O2hc19h8ysCX0oKryW0IomXpBPdHgshfRmbB5TC7.png" />
+      </div>
+</div>
+<br />
+
+     <h3>
+Buy with Confidence</h3>
+<h4>
+Easily get huge saving on goods direct from amazon , up to 10%
+      . and Free Fast Shipping</h4>
+</div>
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+     <br />
+     <div class="row">
+
+      <div class="col-sm-offset-2 col-xs-offset-2 col-xs-8 col-sm-8">
+       <img alt="pay amazon with paypal" class="img-centered img-responsive" src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/M9om7eY6ygFQzWiNCXB5zlXHPfHJZsZaZTaRhRQPPTovbonMqk19GIUxIHVZc.png" />
+      </div>
+</div>
+<br />
+
+     <h3>
+Safe &amp; Secure</h3>
+<h4>
+Pay with Paypal secure and safe payment .</h4>
+</div>
+</div>
+<br /> <br />
+
+  </div>
+</section>
+
+ <!-- -->
+ <section class="success" id="">
+  <div class="container">
+
+   <div class="row">
+    <div class="col-lg-12 text-center">
+     <h2>
+Need to return an item ?</h2>
+<hr class="star-light" />
+    </div>
+</div>
+<br /> <br /> <br />
+   <div class="row">
+
+    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+
+     <br /> <br /> <br />
+     <h4>
+If your item isn’t as described contact us within 5 business
+      days of delivery and SellMeGiftCard will request a return on
+      Amazon .</h4>
+<br /> <br />
+
+
+    </div>
+<div class="col-lg-1 col-md-1 3 col-sm-3">
+</div>
+<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+     <img alt="return item to amazon" class="img-centered img-responsive" src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/aT93XYJPdBGNTSYre8AUQda0FHRPkiG8O0RAuqZXcmjc2rxbMvYrosUjEmwvCfQtOP5B.png" />
+    </div>
+</div>
+<br /> <br />
+
+  </div>
+</section>
+
+
+ <br />
+ <br />
+ <div class="container">
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Toys &amp; Games</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="L.O.L. Surprise Under Wraps Doll- Series Eye Spy 1A">
+L.O.L. Surprise Under Wraps Doll- Series Eye Spy 1A</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51ANO6BG4JL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B07BHQ81VH&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B07BHQ81VH" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$13.88</del>
+</h5>
+<h5>
+SellMeGiftCard price : $13.04  </h5>
+<h5>
+You save : $0.85 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="L.O.L. Surprise! Glam Glitter Series Doll">
+L.O.L. Surprise! Glam Glitter Series Doll</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51LtT0mmx9L._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B07BHQ14L9&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B07BHQ14L9" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$10.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $10.33  </h5>
+<h5>
+You save : $0.67 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="L.O.L. Surprise Bigger Surprise!">
+L.O.L. Surprise Bigger Surprise!</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51zUS4vQ5AL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B07BHQ81XG&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B07BHQ81XG" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$89.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $84.59  </h5>
+<h5>
+You save : $5.4 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Mattel Games UNO Card Game">
+Mattel Games UNO Card Game</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51voAazrcAL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00004TZY8&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00004TZY8" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$4.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $4.69  </h5>
+<h5>
+You save : $0.3 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Amazon Devices &amp; Accessories</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Fire TV Stick with Alexa Voice Remote | Streaming Media Player">
+Fire TV Stick with Alexa Voice Remote | Streaming Media Player</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/31CO38sRgDL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00ZV9RDKK&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00ZV9RDKK" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$29.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $28.19  </h5>
+<h5>
+You save : $1.8 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Fire TV with 4K Ultra HD and Alexa Voice Remote (Pendant Design) | Streaming Media Player">
+Fire TV with 4K Ultra HD and Alexa Voice Remote (Pendant Design) | Streaming Media Player</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41g8XFzH3-L._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B01N32NCPM&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B01N32NCPM" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$69.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $65.79  </h5>
+<h5>
+You save : $4.2 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Echo Dot (2nd Generation) - Smart speaker with Alexa - Black">
+Echo Dot (2nd Generation) - Smart speaker with Alexa - Black</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41iz5Tw82IL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B01DFKC2SO&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B01DFKC2SO" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$39.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $37.59  </h5>
+<h5>
+You save : $2.4 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Amazon Ethernet Adapter for Amazon Fire TV Devices">
+Amazon Ethernet Adapter for Amazon Fire TV Devices</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/31nFEXL3auL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B074TC662N&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B074TC662N" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$14.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $14.09  </h5>
+<h5>
+You save : $0.91 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Amazon Launchpad</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="TubShroom The Revolutionary Shower Tub Drain Protector Hair Catcher/Strainer/Snare">
+TubShroom The Revolutionary Shower Tub Drain Protector Hair Catcher/Strainer/Snare</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51tF%2BTLcQ2L._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B01CS3RDRY&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B01CS3RDRY" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$12.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $12.21  </h5>
+<h5>
+You save : $0.78 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="SmartyPants Kids Complete Gummy Vitamins: Multivitamin &amp; Omega 3 DHA/EPA Fish Oil, Methyl B12, Vitamin D3, 120 count (30 Day Supply)">
+SmartyPants Kids Complete Gummy Vitamins: Multivitamin &amp; Omega 3 DHA/EPA Fish Oil, Methyl B12, Vitamin D3, 120 count (30 Day Supply)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41P%2BYvE0rjL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B004QQ9LVS&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B004QQ9LVS" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$15.32</del>
+</h5>
+<h5>
+SellMeGiftCard price : $14.4  </h5>
+<h5>
+You save : $0.92 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Wyze Cam 1080p HD Indoor Wireless Smart Home Camera with Night Vision, 2-Way Audio, Works with Alexa">
+Wyze Cam 1080p HD Indoor Wireless Smart Home Camera with Night Vision, 2-Way Audio, Works with Alexa</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41dFbSyyPsL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B076H3SRXG&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B076H3SRXG" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$25.98</del>
+</h5>
+<h5>
+SellMeGiftCard price : $24.42  </h5>
+<h5>
+You save : $1.56 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="New Vega Protein &amp; Greens, Plant Protein Shake, Vanilla, 25 Servings, 26.8 ounce tub">
+New Vega Protein &amp; Greens, Plant Protein Shake, Vanilla, 25 Servings, 26.8 ounce tub</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41s4taBflmL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B079P7BFYL&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B079P7BFYL" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$19.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $18.79  </h5>
+<h5>
+You save : $1.2 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Appliances</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="GE RPWFE Refrigerator Water Filter">
+GE RPWFE Refrigerator Water Filter</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/31bnyAWUHoL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B009PCI2JU&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B009PCI2JU" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$54.82</del>
+</h5>
+<h5>
+SellMeGiftCard price : $51.53  </h5>
+<h5>
+You save : $3.29 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Revlon 1875W Infrared Hair Dryer for Faster Drying &amp; Maximum Shine">
+Revlon 1875W Infrared Hair Dryer for Faster Drying &amp; Maximum Shine</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41eVUXWVWqL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00GZG4KSG&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00GZG4KSG" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$16.69</del>
+</h5>
+<h5>
+SellMeGiftCard price : $15.68  </h5>
+<h5>
+You save : $1.02 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="INFINITIPRO BY CONAIR 1875 Watt Salon Performance AC Motor Styling Tool/Hair Dryer; Orange">
+INFINITIPRO BY CONAIR 1875 Watt Salon Performance AC Motor Styling Tool/Hair Dryer; Orange</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41PDBY-5cfL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00FNQRCS4&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00FNQRCS4" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$21.24</del>
+</h5>
+<h5>
+SellMeGiftCard price : $19.96  </h5>
+<h5>
+You save : $1.28 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Bed Head Wave Artist Deep Waver for Beachy Waves">
+Bed Head Wave Artist Deep Waver for Beachy Waves</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/414JzLoWHiL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B003FBI9LS&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B003FBI9LS" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$18.19</del>
+</h5>
+<h5>
+SellMeGiftCard price : $17.09  </h5>
+<h5>
+You save : $1.11 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Arts, Crafts &amp; Sewing</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="SINGER 218 60-Inch Tape Measure">
+SINGER 218 60-Inch Tape Measure</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41BD6MiJaPL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B000B7Q9FM&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B000B7Q9FM" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$2.09</del>
+</h5>
+<h5>
+SellMeGiftCard price : $1.96  </h5>
+<h5>
+You save : $0.13 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Myhouse Women Girls 18k White Gold Rhinestone Heart Ring MOM Letter Ring for Mother's Day Gifts (8)">
+Myhouse Women Girls 18k White Gold Rhinestone Heart Ring MOM Letter Ring for Mother's Day Gifts (8)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51mzDLxgTRL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B07CPZCFX4&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B07CPZCFX4" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$1.61</del>
+</h5>
+<h5>
+SellMeGiftCard price : $1.51  </h5>
+<h5>
+You save : $0.11 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Myhouse Women Girls 18k White Gold Rhinestone Heart Ring MOM Letter Ring for Mother's Day Gifts (7)">
+Myhouse Women Girls 18k White Gold Rhinestone Heart Ring MOM Letter Ring for Mother's Day Gifts (7)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51mzDLxgTRL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B07CPTRSV3&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B07CPTRSV3" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$1.61</del>
+</h5>
+<h5>
+SellMeGiftCard price : $1.51  </h5>
+<h5>
+You save : $0.11 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="VELCRO Brand - Sticky Back Hook and Loop Fasteners | Perfect for Home or Office | General Purpose Peel &amp; Stick | 3 1/2in x 3/4in Strips | Pack of 4 | Black">
+VELCRO Brand - Sticky Back Hook and Loop Fasteners | Perfect for Home or Office | General Purpose Peel &amp; Stick | 3 1/2in x 3/4in Strips | Pack of 4 | Black</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41%2ByFqdA-iL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B000TGSPV6&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B000TGSPV6" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$2.98</del>
+</h5>
+<h5>
+SellMeGiftCard price : $2.8  </h5>
+<h5>
+You save : $0.19 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Automotive</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="AstroAI Digital Tire Pressure Gauge 150 PSI 4 Settings for Car Truck Bicycle with Backlit LCD and Non-Slip Grip, Silver (1 Pack)">
+AstroAI Digital Tire Pressure Gauge 150 PSI 4 Settings for Car Truck Bicycle with Backlit LCD and Non-Slip Grip, Silver (1 Pack)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/413L0BHtSBL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B01J8DLGU2&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B01J8DLGU2" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$8.45</del>
+</h5>
+<h5>
+SellMeGiftCard price : $7.94  </h5>
+<h5>
+You save : $0.51 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="AmazonBasics Microfiber Cleaning Cloth - 24-Pack">
+AmazonBasics Microfiber Cleaning Cloth - 24-Pack</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51iqBRp4aWL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B009FUF6DM&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B009FUF6DM" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$10.88</del>
+</h5>
+<h5>
+SellMeGiftCard price : $10.22  </h5>
+<h5>
+You save : $0.67 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="kinder Fluff Car Sun Shade (4px) -80 GSM with 15s Film (Highest Possible) for Full UV Protection-2 Transparent and 2 Semi-Transparent Sunshades">
+kinder Fluff Car Sun Shade (4px) -80 GSM with 15s Film (Highest Possible) for Full UV Protection-2 Transparent and 2 Semi-Transparent Sunshades</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51ICChatJTL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00ZOKJVAG&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00ZOKJVAG" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$12.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $12.21  </h5>
+<h5>
+You save : $0.78 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Moso Natural 200 gm Air Purifying Bag Deodorizer. Odor Eliminator for Cars, Closets, Bathrooms and Pet Areas. Absorbs and Eliminates Odors. Charcoal Color">
+Moso Natural 200 gm Air Purifying Bag Deodorizer. Odor Eliminator for Cars, Closets, Bathrooms and Pet Areas. Absorbs and Eliminates Odors. Charcoal Color</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/61lhFd8ztrL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B004BOH6BM&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B004BOH6BM" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$9.95</del>
+</h5>
+<h5>
+SellMeGiftCard price : $9.35  </h5>
+<h5>
+You save : $0.6 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Baby</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Baby Banana Infant Training Toothbrush and Teether, Yellow">
+Baby Banana Infant Training Toothbrush and Teether, Yellow</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/316WpcHV%2BHL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B002QYW8LW&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B002QYW8LW" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$7.61</del>
+</h5>
+<h5>
+SellMeGiftCard price : $7.15  </h5>
+<h5>
+You save : $0.46 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Mommy's Helper Outlet Plugs, 36 Count">
+Mommy's Helper Outlet Plugs, 36 Count</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/31WLusUnqkL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00081J3N6&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00081J3N6" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$2.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $2.81  </h5>
+<h5>
+You save : $0.19 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Nuby Octopus Hoopla Bathtime Fun Toys, Purple">
+Nuby Octopus Hoopla Bathtime Fun Toys, Purple</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41CA7xS4brL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B008CDR7LW&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B008CDR7LW" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$6.85</del>
+</h5>
+<h5>
+SellMeGiftCard price : $6.43  </h5>
+<h5>
+You save : $0.42 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Frog Children Potty Toilet Training Kid Urinal for Boy Pee Trainer Bathroom Green">
+Frog Children Potty Toilet Training Kid Urinal for Boy Pee Trainer Bathroom Green</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51r8FaWpckL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B015KB98RE&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B015KB98RE" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$1.97</del>
+</h5>
+<h5>
+SellMeGiftCard price : $1.85  </h5>
+<h5>
+You save : $0.12 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Beauty &amp; Personal Care</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Aztec Secret - Indian Healing Clay - 1 lb. | Deep Pore Cleansing Facial &amp; Healing Body Mask | The Original 100% Natural Calcium Bentonite Clay">
+Aztec Secret - Indian Healing Clay - 1 lb. | Deep Pore Cleansing Facial &amp; Healing Body Mask | The Original 100% Natural Calcium Bentonite Clay</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51XYN7NNCFL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B0014P8L9W&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B0014P8L9W" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$9.20</del>
+</h5>
+<h5>
+SellMeGiftCard price : $8.64  </h5>
+<h5>
+You save : $0.56 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="COSRX Acne Pimple Master Patch, 24 Patches">
+COSRX Acne Pimple Master Patch, 24 Patches</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41NdJ3gCv3L._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00PBX3TN6&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00PBX3TN6" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$4.97</del>
+</h5>
+<h5>
+SellMeGiftCard price : $4.67  </h5>
+<h5>
+You save : $0.3 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="ArtNaturals Therapeutic-Grade Aromatherapy Essential Oil Set – (8 x 10ml) - 100% Pure of the Highest Quality Oils – Peppermint, Tea Tree, Lavender, Eucalyptus">
+ArtNaturals Therapeutic-Grade Aromatherapy Essential Oil Set – (8 x 10ml) - 100% Pure of the Highest Quality Oils – Peppermint, Tea Tree, Lavender, Eucalyptus</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/619CQTvasqL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B01161IL20&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B01161IL20" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$16.95</del>
+</h5>
+<h5>
+SellMeGiftCard price : $15.93  </h5>
+<h5>
+You save : $1.02 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="TruSkin Naturals Vitamin C Serum for Face, Topical Facial Serum with Hyaluronic Acid &amp; Vitamin E, 1 fl oz.">
+TruSkin Naturals Vitamin C Serum for Face, Topical Facial Serum with Hyaluronic Acid &amp; Vitamin E, 1 fl oz.</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51%2BBCDOnDVL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B01M4MCUAF&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B01M4MCUAF" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$19.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $18.79  </h5>
+<h5>
+You save : $1.2 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Books</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="The Wonky Donkey
+                        (Paperback)">
+The Wonky Donkey
+                        (Paperback)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51cHCkvvKiL._SS160_PIsitb-sticker-arrow-sm,TopRight,10,-13_OU01_._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=0545261244&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/0545261244" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$5.58</del>
+</h5>
+<h5>
+SellMeGiftCard price : $5.24  </h5>
+<h5>
+You save : $0.34 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Fear: Trump in the White House
+                        (Hardcover)">
+Fear: Trump in the White House
+                        (Hardcover)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/416jD1EyieL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=1501175513&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/1501175513" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$17.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $16.91  </h5>
+<h5>
+You save : $1.08 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Whiskey in a Teacup: What Growing Up in the South Taught Me About Life, Love, and Baking Biscuits
+                        (Hardcover)">
+Whiskey in a Teacup: What Growing Up in the South Taught Me About Life, Love, and Baking Biscuits
+                        (Hardcover)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51fdJ6OnQ7L._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=1501166271&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/1501166271" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$20.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $19.73  </h5>
+<h5>
+You save : $1.26 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Dog Man: Lord of the Fleas: From the Creator of Captain Underpants (Dog Man #5)
+                        (Hardcover)">
+Dog Man: Lord of the Fleas: From the Creator of Captain Underpants (Dog Man #5)
+                        (Hardcover)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/61SY1Up5T9L._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=0545935172&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/0545935172" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$6.94</del>
+</h5>
+<h5>
+SellMeGiftCard price : $6.52  </h5>
+<h5>
+You save : $0.43 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Camera &amp; Photo</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Fujifilm INSTAX Mini Instant Film Twin Pack (White)">
+Fujifilm INSTAX Mini Instant Film Twin Pack (White)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/514a%2B4XMmKL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00EB4ADQW&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00EB4ADQW" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$12.60</del>
+</h5>
+<h5>
+SellMeGiftCard price : $11.84  </h5>
+<h5>
+You save : $0.76 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Wyze Cam 1080p HD Indoor Wireless Smart Home Camera with Night Vision, 2-Way Audio, Works with Alexa">
+Wyze Cam 1080p HD Indoor Wireless Smart Home Camera with Night Vision, 2-Way Audio, Works with Alexa</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41dFbSyyPsL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B076H3SRXG&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B076H3SRXG" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$25.98</del>
+</h5>
+<h5>
+SellMeGiftCard price : $24.42  </h5>
+<h5>
+You save : $1.56 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Fujifilm Instax Mini Instant Film (3 Twin Packs, 60 Total Pictures) - International Version">
+Fujifilm Instax Mini Instant Film (3 Twin Packs, 60 Total Pictures) - International Version</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/31TOaomoGWL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B00O4OR4GQ&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B00O4OR4GQ" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$37.59</del>
+</h5>
+<h5>
+SellMeGiftCard price : $35.33  </h5>
+<h5>
+You save : $2.27 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Wyze Cam Pan 1080p Pan/Tilt/Zoom Wi-Fi Indoor Smart Home Camera with Night Vision and 2-Way Audio, Works with Alexa">
+Wyze Cam Pan 1080p Pan/Tilt/Zoom Wi-Fi Indoor Smart Home Camera with Night Vision and 2-Way Audio, Works with Alexa</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/31dz6wCIWML._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B07DGR98VQ&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B07DGR98VQ" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$35.98</del>
+</h5>
+<h5>
+SellMeGiftCard price : $33.82  </h5>
+<h5>
+You save : $2.16 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+<div class="row">
+ 
+             <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 ">
+ 
+                 <h4>
+Cell Phones &amp; Accessories</h4>
+</div>
+</div>
+<div class="row">
+                   <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Sandisk Ultra 200GB Micro SDXC UHS-I Card with Adapter - 100MB/s U1 A1 - SDSQUAR-200G-GN6MA">
+Sandisk Ultra 200GB Micro SDXC UHS-I Card with Adapter - 100MB/s U1 A1 - SDSQUAR-200G-GN6MA</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51HHUmRprPL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B073JY5T7T&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B073JY5T7T" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$44.05</del>
+</h5>
+<h5>
+SellMeGiftCard price : $41.4  </h5>
+<h5>
+You save : $2.65 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="Maxboost Screen Protector for Apple iPhone XS &amp; iPhone X (Clear, 3 Packs) 0.25mm iPhone XS/X Tempered Glass Screen Protector with Advanced Clarity [3D Touch] Work with Most Case 99% Touch Accurate">
+Maxboost Screen Protector for Apple iPhone XS &amp; iPhone X (Clear, 3 Packs) 0.25mm iPhone XS/X Tempered Glass Screen Protector with Advanced Clarity [3D Touch] Work with Most Case 99% Touch Accurate</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51y1b8ooOdL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B073DLZWX7&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B073DLZWX7" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$13.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $13.15  </h5>
+<h5>
+You save : $0.84 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div style="height: 100px; line-height: 20px;" title="AmazonBasics Lightning to USB A Cable - Apple MFi Certified - White - 6 Feet /1.8 Meters">
+AmazonBasics Lightning to USB A Cable - Apple MFi Certified - White - 6 Feet /1.8 Meters</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/41thg-HYBLL._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B010S9N6OO&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B010S9N6OO" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$7.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $7.51  </h5>
+<h5>
+You save : $0.49 (6%) </h5>
+<br />
+<br />
+   </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 well">
+  
+<div>
+ <div 2015="" 2016="" 2017="" ack="" inch="" style="height: 100px; line-height: 20px;" title="amFilm iPhone 8, 7, 6S, 6 Screen Protector Glass, amFilm Tempered Glass Screen Protector for Apple iPhone 8, 7, iPhone 6S, iPhone 6 [4.7">
+amFilm iPhone 8, 7, 6S, 6 Screen Protector Glass, amFilm Tempered Glass Screen Protector for Apple iPhone 8, 7, iPhone 6S, iPhone 6 [4.7"inch] 2017 2016, 2015 (2-Pack)</div>
+</div>
+<div>
+
+ <img alt="" class="img-responsive img-centered" src="https://images-na.ssl-images-amazon.com/images/I/51ZzbaYYC4L._SL500_SR500,500_.jpg" />
+</div>
+<br />
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-info btn-block" href="https://www.sellmegiftcard.com/amazon-shopping/select-address.php?amazon_asin=B01415QHYW&amp;" type="button">Buy Now</a>
+ </div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+  <a class="btn btn-success btn-block" href="https://www.amazon.com/dp/B01415QHYW" target="_blank" type="button">Visit Amazon</a>
+ </div>
+</div>
+<h5>
+ Amazon price :
+ <del>$7.99</del>
+</h5>
+<h5>
+SellMeGiftCard price : $7.51  </h5>
+<h5>
+You save : $0.49 (6%) </h5>
+<br />
+<br />
+   </div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="text-left" id="footer">
+ <div class="footer-above">
+  <div class="container">
+   <div class="row">
+    <div class="footer-col col-md-2">
+     <h5 style="color: #1aa5e2;">
+About</h5>
+<h5>
+      <a class="" href="https://www.sellmegiftcard.com/partnerships.php?" style="color: white;">Partnerships </a>
+     </h5>
+<h5>
+      <a class="" href="https://www.sellmegiftcard.com/privacy-policy.php?" style="color: white;">Privacy Policy </a>
+     </h5>
+<h5>
+      <a class="" href="https://www.sellmegiftcard.com/terms_of_service.php?" style="color: white;">Terms of Service </a>
+     </h5>
+<h5>
+      <a class="" href="https://www.sellmegiftcard.com/contact-us.php?" style="color: white;">Contact us </a>
+     </h5>
+</div>
+<div class="footer-col col-md-2">
+     <h5 style="color: #1aa5e2;">
+Social</h5>
+<h5>
+      <a class="" href="https://www.facebook.com/151428142006806" style="color: white;" target="_blank">Facebook
+      </a>
+     </h5>
+<h5>
+      <a class="" href="https://twitter.com/sellmegiftcard?lang=en" style="color: white;" target="_blank">Twitter</a>
+     </h5>
+<!--  
+     <h5>
+      <a style="color: #ffffff" target="_blank"
+       href="https://www.youtube.com/channel/UCtRAiQmNxm2UstH5JVDYCcw"
+       class=""> Youtube </a>
+     </h5>
+-->
+    </div>
+<div class="footer-col col-md-2">
+     <h5 style="color: #1aa5e2;">
+Features</h5>
+<h5>
+      <a class="" href="https://www.sellmegiftcard.com/amazon-shopping/select-item.php?" style="color: white;">Amazon Shopping </a>
+     </h5>
+<h5>
+      <a class="" href="https://www.sellmegiftcard.com/?" style="color: white;">Sell
+       Your Gift Card</a>
+     </h5>
+</div>
+<div class="footer-col col-md-3">
+</div>
+<div class="footer-col col-md-3">
+     <br />
+     <h5 style="color: white;">
+      MADE WITH <span class="glyphicon glyphicon-heart"></span><br /> IN
+      SAN FRANCISCO
+     </h5>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-below">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-12">
+Copyright © SellMeGiftCard Inc 2018</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+ <a class="btn btn-primary" href="https://www.blogger.com/blogger.g?blogID=9069092063355215699#page-top"> <i class="fa fa-chevron-up"></i>
+ </a>
+</div>
+<div id="fullScreenLoader" style="background-color: rgba(255, 255, 255, 0.6); display: none; height: 100%; left: 0; position: fixed; top: 0; width: 100%; z-index: 10000;">
+ <img src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/images/3DVpz2WbQ4shad869L4YsgI4JcMiz1TkE9ufIVWkPfm0hHJrI3IpVR2NiKDI62rDKTQqOQmWJ.gif" style="height: 300px; left: 50%; margin-left: -150px; margin-top: -150px; position: fixed; top: 50%; width: 300px; z-index: 10000;" />
+</div>
+<!-- jQuery -->
+<script src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://s3-us-west-1.amazonaws.com/sellmegiftcard/public/js/plugins.mini.js"></script>
+
+
+<script>
+$( document ).ready(function() {
+
+  $.ajaxSetup({
+      beforeSend: function(xhr) {
+          xhr.setRequestHeader('auth', localStorage.getItem("auth"));
+      }
+  });
+});
+
+
+
+function RequestAsynsTask(){};
+
+
+/*
+ * send ajax post request
+ */
+RequestAsynsTask.send_ajax_post = function( data,url, callBack) {
+ 
+           //show loader
+              RequestAsynsTask._showNetWorkLoader();
+
+              //add page url to data
+              if(data && window && window.location){
+                           var  page_url = window.location.href;
+                           data["page_url"] =  page_url;   
+                       }
+  
+           var xhr =$.ajax({
+            type : "POST",
+            url : url,
+            beforeSend: function(request) {
+                if (typeof(Storage) !== "undefined" && localStorage.device_id != undefined) {
+                 request.setRequestHeader("device-id", localStorage.device_id);
+                }
+            },
+            data : data,
+            error : function(xhr, textStatus, errorThrown) {
+             RequestAsynsTask._request_failed(xhr, textStatus, errorThrown);
+            },
+            success : function(result) {
+             RequestAsynsTask._request_succeed(result,callBack);
+             
+            }
+          
+           });
+          
+              return xhr;
+                                       }
+
+
+
+         
+/*
+ * a function to be called if the request succeed.
+ */
+RequestAsynsTask._request_succeed = function(result,callBack){
+                                                //hide progress bar
+                                                RequestAsynsTask._hideNetWorkLoader();
+            //parse json , if result is a vlid json text
+            var json = null;
+            try {
+           
+             json = JSON.parse(result);
+             
+            } catch (e) {
+             // The input text does not comply with JSON syntax
+             
+            }
+
+               //show static message
+            RequestAsynsTask.handleServerMessage(json);
+           
+            // callbaack function,if result is a valid json text then pass json, else pass result to callback funcion 
+            if (callBack)
+             if(json)
+             {
+               callBack(json,true);
+             }  
+             else
+               callBack(result,false); 
+
+                                      }
+
+/*
+ * a function to be called if the request failed 
+ */
+RequestAsynsTask._request_failed = function(xhr, textStatus, errorThrown)
+           {
+                                          RequestAsynsTask._hideNetWorkLoader();//hide progress bar
+            if(textStatus !=='abort')
+                alert('ther server encountered an error . . .');
+        }
+
+/*
+ * Show error message or succes server messags .
+ * Saved elment ids : server_error_message , server_success_message
+ */
+RequestAsynsTask.handleServerMessage = function(server_json){
+
+     var server_message_error_tag_id = "#server_error_message";
+     var server_message_success_tag_id = "#server_success_message";
+     var server_message_info_tag_id = "#server_info_message";
+     
+
+     //first hide
+  
+  if(server_json){
+
+
+   //step1 , handle alert message
+   var message = server_json["message"];
+   if(message instanceof Object){
+      //display message if exist
+        if (message.displayMessage === true) {
+     alert(message.content);
+     }
+    }
+
+   //step2 handle static message
+   var server_message = server_json["message"];
+   if(server_message){
+
+    var message_type = server_json["message_type"];
+
+    if(message_type == "error"){//error reponse
+        $(server_message_error_tag_id).show();
+        $(server_message_success_tag_id).hide();
+        $(server_message_info_tag_id).hide();
+        
+        $(server_message_error_tag_id).html(server_message);
+        return;
+    }
+
+    if(message_type == "success"){//success response
+         $(server_message_success_tag_id).show();
+      $(server_message_error_tag_id).hide();
+      $(server_message_info_tag_id).hide();
+       
+         $(server_message_success_tag_id).html(server_message);
+         return;
+    }
+
+    if(message_type == "info"){//info response
+         $(server_message_info_tag_id).show();
+      $(server_message_error_tag_id).hide();
+      $(server_message_success_tag_id).hide();
+       
+         $(server_message_info_tag_id).html(server_message);
+         return;
+    }
+   }
+     }
+
+     //no messages hide both tags 
+   $(server_message_error_tag_id).hide();
+   $(server_message_success_tag_id).hide();
+    
+      
+    
+
+ 
+}
+
+/*--------------------------------------------- net work loader functions ----------------------*/
+RequestAsynsTask._showNetWorkLoader=function(){
+    $("#fullScreenLoader").fadeIn("slow");
+}
+
+RequestAsynsTask._hideNetWorkLoader=function(){
+    $("#fullScreenLoader").fadeOut("slow");
+}         
+
+
+</script>
+
+<script>
+
+    /*
+      -This Function accpet FormId,url. it will declare the form button trigger and it's functions.
+      -please note it shuold be called within $( document ).ready(function())
+    */
+    function intializeForm(formId,url,server_response_func){
+
+        var FROM_SUBMIT_BUTTON_ID = formId + "-submit_button"
+
+     $("#"+FROM_SUBMIT_BUTTON_ID).click(function(){
+
+      var formInputParams = getFormInputParams(formId);
+
+            //add page url
+            if(window && window.location){
+             var  page_url = window.location.href;
+             formInputParams["page_url"] =  page_url;   
+            }
+      
+      RequestAsynsTask.send_ajax_post(formInputParams,url,function(json_response){
+       displayServerFromResponse(formId,json_response);
+
+          //adwords converstion tracking
+       var is_conversion = json_response["is_conversion"];
+       if(is_conversion && is_conversion == true){
+        gtag_report_gift_card_sale_conversion();
+             }
+
+             if(server_response_func){
+              server_response_func(json_response);
+             }
+       
+      });
+        
+     });
+
+    }
+
+
+ /*
+  The bellow function accept formId (without #) and return dictionary which contain
+  */
+ function getFormInputParams(formId){
+
+
+  /* a dictionary will contain all the form input keys and their values, will be filled in the bellow loop */
+  var inputParams = {};
+
+  //iterate through tags which has class input
+  $("#"+formId).find(".input").each(function(index){
+
+   //get the id of the input, here is the id structure formId-{inputId}
+   var fullInputId = $(this).attr("id");
+   var inputId = fullInputId.replace(formId+"-","");
+
+
+   //get the input value
+   var inputValue = $(this).val();
+
+
+   //add the input key and value to inputParams
+   inputParams[inputId] = inputValue;
+
+  });
+
+   return inputParams;
+
+ }
+
+
+ /*
+  This Function accept the following:
+
+  - formId (without #) where the response messages will be displayed
+  - json_response with the bellow structure:
+  {
+  "success":"false",
+  "message" : "main error message" ,
+  "inputMessagesError":{
+  "inputId1" : "errorMessage",
+  "inputId2" : "errorMessage",
+  "inputId3" : "errorMessage",
+
+  }
+  }
+
+  @param "success" required :  if false then there is an error with user input else the form request was sent successfully
+  @param "message" required : the main message which will be displayed bellow the sent key
+  @param "inputMessagesError" required : the error messages for each input field, mainly it will be attached if success = false
+
+
+  */
+ function displayServerFromResponse(formId,json_response){
+
+  //get inputsErrorMessages
+  var inputsErrorMessages = null;
+  if(json_response["inputMessagesError"]){
+   inputsErrorMessages = json_response["inputMessagesError"];
+  }else{
+   inputsErrorMessages = {};
+  }
+
+  
+   
+  /*
+   TODO:
+   -step1
+   i. if there is an error attached to inputMessages with the input then display the errorMessage
+   ii. else then hide the error message
+
+   -step3 display the main message, if success true then it should be success message , else it should be error message
+   -step4 if success == true then delete all input values
+   */
+
+  //step1
+  //step1 iterate through tags which has class input
+  $("#"+formId).find(".input").each(function(index){
+
+
+   
+   //get the id of the input, here is the id structure formId-{inputId}
+   var fullInputId = $(this).attr("id");
+   var inputId = fullInputId.replace(formId+"-","");
+   
+
+   //get the id of the error message which is belong to the this inputId,
+   // here is the error pattern: {fullInputId}-error_message
+   var errorId = fullInputId + "-error_message";
+   
+
+   //get the error message which belong to this input from json_response
+   var inputErrorMessage = inputsErrorMessages[inputId];
+   
+
+
+   if(inputErrorMessage){// i
+
+    //show error message
+    $( "#" + errorId ).show();
+     
+    //display text
+    $("#"+ errorId).text(inputErrorMessage);
+
+   }else{// ii
+
+    //hide error message
+    $( "#" + errorId ).hide();
+
+   }
+  });
+
+   //step2
+   if(json_response["success"] === true){
+
+    $("#"+formId).find(".form-main-message-error").hide();
+    $("#"+formId).find(".form-main-message-success").show();
+    $("#"+formId).find(".form-main-message-success").html(json_response["message"]);
+
+   }else if(json_response["success"] === false) {//error reponse
+
+    $("#"+formId).find(".form-main-message-error").show();
+    $("#"+formId).find(".form-main-message-success").hide();
+    $("#"+formId).find(".form-main-message-error").html(json_response["message"]);
+
+   }
+
+   //step3
+   if(json_response["success"] === true){
+
+    $("#"+formId).find(".input").each(function(index){
+
+     $(this).val("");
+
+    });
+
+
+   }
+
+    
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+ </script>
+
+    <script>
+  if (typeof(Storage) !== "undefined") {
+         if(localStorage.device_id == undefined ){
+             localStorage.device_id = "3r9zQ92AFRkWYyQT7GRydnMgtk3q3gKUYMpiORojBU";    
+         }    
+     }
+       
+    </script>
+<script>
+$( document ).ready(function() {
+
+
+ //trigger search button click
+ $("#searchAmazonItemButton").click(function(){
+         var amazonItemLink = $("#searchAmazonItemInput").val();
+         searchAmazonItem(amazonItemLink);
+
+    });
+
+
+ //trigger input change
+ $("#searchAmazonItemInput").change(function(){
+
+        var amazonItemLink = $(this).val();
+        searchAmazonItem(amazonItemLink);
+
+   });
+  
+  
+});
+
+/** 
+ * build amazon item data block .
+ *
+ * @return amazon block html on success , otherwise false
+ */
+function buildAmazonItemBlockHtml(amazon_item_data){
+
+ var title = amazon_item_data["title"];
+ var picture_link = amazon_item_data["picture_link"];
+ var amazon_item_link = amazon_item_data["amazon_item_link"];
+ var price_savings = amazon_item_data["price_savings"];
+ var picture_link = amazon_item_data["picture_link"];
+ var sellmegiftcard_price_usd = amazon_item_data["sellmegiftcard_price_usd"];
+ var amazon_price_usd = amazon_item_data["amazon_price_usd"];
+ var price_savings = amazon_item_data["price_savings"];
+ var buy_now_link = amazon_item_data["buy_now_link"];
+
+
+ if(title == null || picture_link == null ){//no item found
+  return false;
+ }
+
+ var html_block = "";
+
+ //add title
+ html_block = html_block + 
+              "<div>
+" +
+                  "<h5>
+"+ title +"</h5>
+"+
+           "</div>
+";
+
+ //add picture
+ html_block = html_block + 
+              "<div>
+" +
+                  "<img src='"+picture_link+"' class='img-responsive img-centered' alt='' />"+
+           "</div>
+";
+
+ //build buy_now_button
+ var buy_now_button_html = "";
+ if(buy_now_link){
+  buy_now_button_html = "<a type='button'"+
+                     "href='"+buy_now_link+"'"+
+                     "class='btn btn-info btn-block' >"+ 
+                     "Buy Now</a>";
+ }
+
+ //build visit amazon button
+ var visit_amazon_button_html = "";
+ if(amazon_item_link){
+  visit_amazon_button_html = "<a type='button'"+
+                          "href='"+amazon_item_link+"'"+
+                          "class='btn btn-success btn-block' target='_blank'>"+ 
+                          "Visit Amazon</a>";
+ }
+
+ //add buttons
+ html_block = html_block + 
+                 "<br/> <div class= 'row' >
+" +
+                 
+                    "<div class='col-lg-6 col-md-6 col-xs-12 col-sm-12'>
+"+buy_now_button_html+"</div>
+"+
+                    "<div class='col-lg-6 col-md-6 col-xs-12 col-sm-12'>
+"+visit_amazon_button_html+"</div>
+"+
+                 "</div>
+";
+
+    //add amazon price usd
+    if(amazon_price_usd){
+     html_block = html_block + "<h5>
+Amazon price : <del>$" + amazon_price_usd + "</del></h5>
+";
+    }
+
+    if(sellmegiftcard_price_usd){
+     html_block = html_block + "<h5>
+SellMeGiftCard price : $" + sellmegiftcard_price_usd + "</h5>
+";
+    }
+
+    if(sellmegiftcard_price_usd){
+     html_block = html_block + "<h5>
+You save : " + price_savings + "</h5>
+";
+    }
+
+    html_block = html_block + "<br/> <br/> ";
+    return html_block;
+    
+ 
+ 
+
+    
+                   
+ 
+ 
+}
+
+//send search amaon item request
+function searchAmazonItem(amazon_item_link){
+
+
+ RequestAsynsTask.send_ajax_post({"amazon_item_link":amazon_item_link},
+                            "https://www.sellmegiftcard.com/ajax/amazon_shopping/get_amazon_item_details.php?",
+                            function(json_response){
+
+            //show amazon item details.
+      var amazonItemHtml =  buildAmazonItemBlockHtml(json_response);
+      var AmazonItemContainerId = "#AmazonItemContainer";
+      if(amazonItemHtml){
+                         $(AmazonItemContainerId).show();
+                         $(AmazonItemContainerId).html(amazonItemHtml);
+      }else{
+                         $(AmazonItemContainerId).hide();
+         }    
+             
+                          
+  
+ });
+ 
+}
+
+</script>
+
+</body>
+
+
+</div>
